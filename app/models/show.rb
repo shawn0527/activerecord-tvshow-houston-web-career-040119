@@ -18,6 +18,16 @@ class Show < ActiveRecord::Base
 
   def self.ratings_sum
     self.sum(rating:)
+  end
+
+  def self.popular_shows
+    self.all.map do |show|
+      show.rating > 5
+    end
+  end
+
+  def self.shows_by_alphabetical_order
+    self.all.order(name: asc)
 
 
 
