@@ -1,3 +1,4 @@
+require 'pry'
 class Show < ActiveRecord::Base
 
   def self.highest_rating
@@ -24,6 +25,9 @@ class Show < ActiveRecord::Base
     self.all.map do |show|
       show.rating > 5
     end
+
+  binding.pry
+  0
   end
 
   def self.shows_by_alphabetical_order
